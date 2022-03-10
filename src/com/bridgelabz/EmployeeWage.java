@@ -1,6 +1,6 @@
 package com.bridgelabz;
 import java.util.Random;
-public class App {
+public class EmployeeWage {
 	
     static public void checkAttendance() {
     	Random randomInt=new Random();
