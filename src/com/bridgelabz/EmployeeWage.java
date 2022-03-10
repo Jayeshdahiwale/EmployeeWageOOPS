@@ -1,6 +1,6 @@
 package com.bridgelabz;
 import java.util.Random;
-public class App {
+public class EmployeeWage {
 	static final int WAGE_PER_HOUR=20;
 	static final int FULL_DAY_HOUR=8;
 	static Random randomInt=new Random();
