@@ -1,15 +1,15 @@
 package com.bridgelabz;
-
+import java.util.ArrayList;
 public class EmpWageBuilder {
- String name;
- int monthlyWage;
  
- void totalWage(String name,int monthlyWage) {
-	 this.name=name;
-	 this.monthlyWage=monthlyWage;
+ static ArrayList<Company> companyList=new ArrayList<Company>();
+ 
+ void showInfo(Company company) {
+	 System.out.println("Company name: "+company.name);
+	 System.out.println("Total Wage :"+company.monthlyWage);
  }
- void showInfo() {
-	 System.out.println("Company name: "+name);
-	 System.out.println("Total Wage :"+monthlyWage);
+ 
+ void addCompany(Company company) {
+	 companyList.add(company);
  }
 }
