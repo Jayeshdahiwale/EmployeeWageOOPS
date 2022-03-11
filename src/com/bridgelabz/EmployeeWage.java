@@ -82,7 +82,8 @@ public class EmployeeWage {
 		EmployeeWage employee = new EmployeeWage();
 		Company company=new Company();
 	    EmpWageBuilder empWageBuilder=new EmpWageBuilder();
-		System.out.println("Enter the name of the company :");
+		
+	    System.out.println("Enter the name of the company :");
 		String name=scan.nextLine();
 		System.out.println("Enter wage per hour :");
 		int wagePerHour=scan.nextInt();
@@ -93,8 +94,10 @@ public class EmployeeWage {
 		
 		company.setInfo(name, wagePerHour, workingDays, workingHoursMonthly);
 		int monthlyWage =employee.calculateMonthlyWage(employee,company);
-		empWageBuilder.totalWage(name, monthlyWage);
-		empWageBuilder.showInfo();
+		company.companyMonthlyWage(monthlyWage);
+		
+		empWageBuilder.showInfo(company);
+		empWageBuilder.addCompany(company);
 	}
 
 }
