@@ -6,12 +6,13 @@ public class Company {
    int workingDays;
    int workingHoursMonthly;
    int monthlyWage;
-   int[] dailyWage=new int[20];
+   int[] dailyWage;
    void setInfo(String name,int wagePerHour,int workingDays,int workingHoursMonthly) {
 	   this.name=name;
 	   this.wagePerHour=wagePerHour;
 	   this.workingDays=workingDays;
 	   this.workingHoursMonthly=workingHoursMonthly;
+	   this.dailyWage=new int[workingDays];
 	   
    }
    

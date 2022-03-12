@@ -53,9 +53,10 @@ public class EmployeeWage {
 			int randInt = randomInt.nextInt(3);
 			hours = hours + employee.checkAttendance(randInt);
 			if (hours > company.workingHoursMonthly) {
+				int remainingHours=hours-company.workingHoursMonthly;
 				hours = company.workingHoursMonthly;
-				monthlyWage = monthlyWage + employee.calculateWage(randInt,company) - company.wagePerHour * PART_DAY_HOUR;
-				company.dailyWage(employee.calculateWage(randInt,company) - company.wagePerHour * PART_DAY_HOUR,days );
+				monthlyWage = monthlyWage + employee.calculateWage(randInt,company) - company.wagePerHour * remainingHours;
+				company.dailyWage(employee.calculateWage(randInt,company) - company.wagePerHour * remainingHours,days );
 				break;
 			} 
 			else {
@@ -80,10 +81,12 @@ public class EmployeeWage {
 		Scanner in=new Scanner(System.in);
 		System.out.println("Welcome to Employee wage computation program");
        
-		EmployeeWage employee = new EmployeeWage();
+
 		
-	    EmpWageBuilder empWageBuilder=new EmpWageBuilder();
+	    
 	    while(true) {
+	    EmployeeWage employee = new EmployeeWage();
+	    EmpWageBuilder empWageBuilder=new EmpWageBuilder(); 	
 	    System.out.println("Enter 0 to add the company or enter 1 to see the company and its total wage : Press 2 to quit");
 	    int input=in.nextInt(); 
 	    if(input==0) {
