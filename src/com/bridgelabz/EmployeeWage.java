@@ -8,11 +8,10 @@ public class EmployeeWage {
 	static final int FULL_DAY_HOUR = 8;
 	static final int PART_DAY_HOUR = 4;
 	//static final int DAYS_PER_MONTH = 20;
-	static int days = 0;
-	static int hours = 0;
-	static int monthlyWage = 0;
-	//static Random randomInt = new Random();
-	//static int randInt = randomInt.nextInt(3);
+	 int days = 0;
+	 int hours = 0;
+	 int monthlyWage = 0;
+	
 
 	int checkAttendance(int randInt) {
 		switch (randInt) {
