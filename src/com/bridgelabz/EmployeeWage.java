@@ -55,10 +55,12 @@ public class EmployeeWage {
 			if (hours > company.workingHoursMonthly) {
 				hours = company.workingHoursMonthly;
 				monthlyWage = monthlyWage + employee.calculateWage(randInt,company) - company.wagePerHour * PART_DAY_HOUR;
+				company.dailyWage(employee.calculateWage(randInt,company) - company.wagePerHour * PART_DAY_HOUR,days );
 				break;
 			} 
 			else {
 				monthlyWage = monthlyWage + employee.calculateWage(randInt,company);
+				company.dailyWage(employee.calculateWage(randInt,company),days);
 			}
 			days += 1;
 			if(employee.checkAttendance(randInt)==0) {
