@@ -20,8 +20,22 @@ public class EmpWageBuilder implements collection  {
 		public void addCompany(Company company) {
 			// TODO Auto-generated method stub
 			 companyList.add(company);
-}
- 
+			 
+		}
+       void showMonthlyWage(String name) {
+    	   int condition=0;
+			for(Company elements:companyList) {
+				if(elements.name.equals(name)) {
+					System.out.println("The total monthly wage of the company is Rs."+elements.monthlyWage);
+					condition=1;
+					break;
+				}
+				
+			}
+			if(condition==0) {
+				System.out.println("Company is not listed in the database");
+			}
+		}	 
                      
 
 

@@ -77,13 +77,18 @@ public class EmployeeWage {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner scan=new Scanner(System.in);
+		Scanner in=new Scanner(System.in);
 		System.out.println("Welcome to Employee wage computation program");
        
 		EmployeeWage employee = new EmployeeWage();
-		Company company=new Company();
-	    EmpWageBuilder empWageBuilder=new EmpWageBuilder();
 		
+	    EmpWageBuilder empWageBuilder=new EmpWageBuilder();
+	    while(true) {
+	    System.out.println("Enter 0 to add the company or enter 1 to see the company and its total wage : Press 2 to quit");
+	    int input=in.nextInt(); 
+	    if(input==0) {
+	    Company company=new Company();
+		Scanner scan=new Scanner(System.in);
 	    System.out.println("Enter the name of the company :");
 		String name=scan.nextLine();
 		System.out.println("Enter wage per hour :");
@@ -99,6 +104,19 @@ public class EmployeeWage {
 		
 		empWageBuilder.showInfo(company);
 		empWageBuilder.addCompany(company);
+	    }
+	    else if(input==1) {
+	    	Scanner in1=new Scanner(System.in);
+	    	System.out.println("Enter the name of company :");
+	    	String name=in1.nextLine();
+	    	empWageBuilder.showMonthlyWage(name);
+	    }
+	    else if(input==2) {
+	    	System.out.println("The program is closed");
+	    	break;
+	    }
+	    }
+	    
 	}
 
 }
