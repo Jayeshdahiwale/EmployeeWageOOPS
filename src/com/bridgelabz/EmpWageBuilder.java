@@ -14,19 +14,25 @@ public class EmpWageBuilder implements collection  {
 			// TODO Auto-generated method stub
 			 System.out.println("Company name: "+company.name);
 			 System.out.println("Total Wage :"+company.monthlyWage);
-		}
+		} 
 
 		@Override
 		public void addCompany(Company company) {
 			// TODO Auto-generated method stub
+			for(Company element:companyList) {
+				if(element.name.equals(company.name)){
+					companyList.remove(element);
+					break;
+				}
+			}
 			 companyList.add(company);
 			 
 		}
        void showMonthlyWage(String name) {
     	   int condition=0;
-			for(Company elements:companyList) {
-				if(elements.name.equals(name)) {
-					System.out.println("The total monthly wage of the company is Rs."+elements.monthlyWage);
+			for(Company element:companyList) {
+				if(element.name.equals(name)) {
+					System.out.println("The total monthly wage of the company is Rs."+element.monthlyWage);
 					condition=1;
 					break;
 				}
